@@ -1,30 +1,30 @@
 #include<iostream>
 using namespace std;
-void insertionSort(int a[],int size)
+void insertionSort(int a[],int n)
 {
-    int i,j,key;
-    for(i=1;i<size;i++)
-    {
-        key=a[i];
-        for(j=i-1;j>=0;j--)
-        {
-            if(key<a[j])
-            {
-                a[j+1]=a[j];
-            }
-            else
-            {
-                break;
-            }
-        }
-        if(i!=(j+1))
-            a[j+1]=key;
-    }
+	int temp;
+	for(int i=1;i<n;i++)
+	{
+		temp=a[i];
+		int j=i-1;
+		while(j>=0 && temp<=a[j])
+		{
+			a[j+1]=a[j];
+			j=j-1;
+		}
+		a[j+1]=temp;
+	}
 }
 int main()
 {
-    int a[]={2,5,3,2,1,6,7,4,9};
-    insertionSort(a,9);
-    for(int i=0;i<9;i++)
-        cout<<a[i]<<endl;
+    int a[] = { 12, 11, 13, 5, 6 };
+    int n = sizeof(a) / sizeof(a[0]);
+ 
+    insertionSort(a, n);
+    for(int i=0;i<n;i++)
+    {
+    	cout<<a[i]<<" ";
+    }
+ 
+    return 0;
 }
