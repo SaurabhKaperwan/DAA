@@ -1,3 +1,5 @@
+//Worst TC=O(n^2)
+//Best TC=O(n)
 #include <iostream>
 using namespace std;
 void bubbleSort(int a[],int size)
