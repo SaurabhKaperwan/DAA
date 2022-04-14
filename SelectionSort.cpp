@@ -1,3 +1,4 @@
+//Worst ,Best,Average TC=O(n^2)
 #include<iostream>
 using namespace std;
 int findMin(int a[],int start,int end)
