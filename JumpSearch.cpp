@@ -9,8 +9,8 @@ int jumpSearch(int a[],int size,int item)
 	while(a[m] <= item && m<=size)
 	{
 		i=m;//Starting of block
-		m=pow(2,j);
 		j++;
+		m=pow(2,j);
 	}
 	for(int x=i;x<m;x++)
 	{
