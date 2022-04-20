@@ -5,12 +5,16 @@ int jumpSearch(int a[],int size,int item)
 {
 	int i=0;
 	int j=0;
-	int m=pow(2,0);//block size
+	int m=pow(2,0);
 	while(a[m] <= item && m<=size)
 	{
-		i=m;//Starting of block
+		i=m;
 		j++;
 		m=pow(2,j);
+		if(m>size-1)
+		{
+			m=size;
+		}
 	}
 	for(int x=i;x<m;x++)
 	{
