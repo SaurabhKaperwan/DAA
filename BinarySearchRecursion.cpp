@@ -2,6 +2,8 @@
 using namespace std;
 int binarySearch(int a[],int l,int h,int item)
 {
+	if(l<h)
+	{
 		int mid=(l+h)/2;
 		if(a[mid]==item)
 		{
@@ -15,6 +17,7 @@ int binarySearch(int a[],int l,int h,int item)
 		{
 			return binarySearch(a,l,mid-1,item);
 		}
+	}
 		return -1;
 }
 int main()
