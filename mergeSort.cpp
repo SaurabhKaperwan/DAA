@@ -1,16 +1,12 @@
 #include<iostream>
 using namespace std;
-int f=0;
-int comp=0;
 void merge(int a[],int l,int mid,int h)
 {
-	f++;
 	int i=l,j=mid+1,k=0;
 	int c[h-l+1];
 	int x=0;
 	while(i<=mid && j<=h)
 	{
-		comp++;
 		if(a[i]<=a[j])
 		{
 			c[k++]=a[i++];
@@ -32,7 +28,6 @@ void merge(int a[],int l,int mid,int h)
 }
 void mergeSort(int a[],int l,int h)
 {
-	f++;
 	if(l<h)
 	{
 		int mid=(l+h)/2;
