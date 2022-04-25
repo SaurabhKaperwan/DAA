@@ -14,9 +14,8 @@ void insertionSort(int a[],int n)
 		}
 		if(i != (j+1))
 		{
-			a[j+1]=key;
+			a[j+1]=temp;
 		}
-		a[j+1]=temp;
 	}
 }
 int main()
