@@ -12,6 +12,10 @@ void insertionSort(int a[],int n)
 			a[j+1]=a[j];
 			j=j-1;
 		}
+		if(i != (j+1))
+		{
+			a[j+1]=key;
+		}
 		a[j+1]=temp;
 	}
 }
