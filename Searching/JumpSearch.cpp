@@ -1,36 +1,54 @@
 #include<iostream>
 #include<cmath>
 using namespace std;
-int jumpSearch(int a[],int size,int item)
+int jump_Search(int a[], int n, int item) 
 {
-	int i=0;
-	int j=0;
-	int m=pow(2,0);
-	while(a[m] <= item && m<=size)
-	{
-		i=m;
-		j++;
-		m=pow(2,j);
-		if(m>size-1)
-		{
-			m=size;
-		}
-	}
-	for(int x=i;x<m;x++)
-	{
-		if(a[x]==item)
-			return x;
-	}
-	return -1;
-}
-int main()
-{
-	int loc=-1;
-	int a[]={1,3,5,6,8};
-	loc=jumpSearch(a,5,8);
-	if(loc>=0)
-		cout<<"Found at:"<<loc+1;
-	else
-		cout<<"Not found";
+   int comp=0;
+   int i = 0;
+   int m = sqrt(n);
 
+   while(a[m] <= item && m < n) 
+   { 
+      comp++;
+      i = m;
+      m += sqrt(n);
+      if(m > n - 1)
+      {
+
+         return -1; 
+      }
+   }
+
+   for(int x = i; x<m; x++) 
+   {
+      comp++;
+      if(a[x] == item)
+      {
+         cout<<"Number of comparisons:"<<comp<<endl;
+         return x;
+      }
+   }
+   return -1;
+}
+
+int main() 
+{
+   int n, item, loc;
+   cout << "\n Enter number of items: ";
+   cin >> n;
+   int arr[n];
+   cout << "\n Enter items: ";
+
+   for(int i = 0; i< n; i++) 
+   {
+      cin >> arr[i];
+   }
+
+   cout << "\n Enter search key to be found in the array: ";
+   cin >> item;
+   loc = jump_Search(arr, n, item);
+   if(loc>=0)
+      cout << "\n Item found at location: " << loc;
+   else
+      cout << "\n Item is not found in the list.";
 }
