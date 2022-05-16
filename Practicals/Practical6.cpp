@@ -1,33 +1,45 @@
 #include<iostream>
 using namespace std;
-int twodiff(int a[], int n,int target) 
+
+void difference(int arr[],int n,int k)
 {
-    int c=0;
-    for(int i=0;i<n;i++)
+    int c = 0;
+    sort(arr, arr+n);  
+ 
+    int l = 0;
+    int r = 0;
+    while(r < n)
     {
-        for(int j=i+1;j<n;j++) 
+         if(arr[r] - arr[l] == k)
         {
-            if(a[i]-a[j]==target||a[j]-a[i]==target)
-            {    
-                c++;
-            }
+              c++;
+              l++;
+              r++;
         }
-    }       
-    return c;  
+         else if(arr[r] - arr[l] > k)
+              l++;
+         else 
+              r++;
+    }  
+
+   cout<<"Output: "<<c<<endl;
 }
+
 int main()
 {
-    int n,key;
-    cout<<"Enter the size of array:";
-    cin>>n;
-    int a[n];
-    cout<<"Enter the elements:";
-    for(int i=0;i<n;i++)
-      cin>>a[i];
-   
-   cout<<"Enter the key:";
-   cin>>key;
-    cout<<twodiff(a,n,key); 
-    
+    int n;
+    cout<<"Enter size:";
+        cin>>n;
+        int arr[n];
+        cout<<"Enter elements:"<<endl;
+
+        for(int i=0;i<n;i++)
+        {
+            cin>>arr[i];
+        }
+        int k;
+        cout<<"Enter the key:";
+        cin>>k;
+        difference(arr,n,k);
     return 0;
 }
