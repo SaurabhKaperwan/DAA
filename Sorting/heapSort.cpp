@@ -7,7 +7,7 @@ void heapify(int arr[],int i,int n)
 	int l=2*i+1;
 	int r=2*i+2;
 
-	if(l<n && arr[max]<arr[l])
+	if(l<n && arr[max]<arr[l])//Due to array overflow 
 		max=l;
 	if(r<n && arr[max]<arr[r])
 		max=r;
