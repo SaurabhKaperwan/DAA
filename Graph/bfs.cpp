@@ -18,7 +18,7 @@ void bfs(vector<int> adj[],vector<bool> &visit,int s)
 		int temp=q.front();
 		cout<<temp<<" ";
 		q.pop();
-		for(auto it=adj[s].begin();it != adj[s].end();it++)
+		for(auto it=adj[temp].begin();it != adj[temp].end();it++)
 		{
 			if(!visit[*it])
 			{
